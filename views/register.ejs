@@ -1,23 +1,32 @@
 ﻿<%- include('partials/header') %>
 <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
 <div class="form">
-    <h2>Register</h2>
+    <h2>Registration</h2>
     <% if(locals.error) { %>
         <div class="alert alert-danger"><%= error %></div>
     <% } %>
     <form method="post">
         <div class="input-group">
             <label for="firstName">First name</label>
-            <input type="text" name="firstName" id="firstName" class="form-control" value="<%= locals.firstName || '' %>" required />
+            <input type="text" placeholder="FirstName" name="firstName" id="firstName" class="form-control" value="<%= locals.firstName || '' %>" required />
         </div>
         <div class="input-group">
             <label for="lastName">Last name</label>
-            <input type="text" name="lastName" id="lastName" class="form-control" value="<%= locals.lastName || '' %>" required />
+            <input type="text" placeholder="LastName" name="lastName" id="lastName" class="form-control" value="<%= locals.lastName || '' %>" required />
+        </div>
+        <div class="input-group">
+            <label for="password">Email</label>
+            <input type="email" placeholder="example@domain.com" name="email" id="email" class="form-control" required />
         </div>
         <div class="input-group">
             <label for="username">Username</label>
-            <input type="text" name="username" id="username" class="form-control" value="<%= locals.username || '' %>" required />
+            <input type="text" placeholder="Username" name="username" id="username" class="form-control" value="<%= locals.username || '' %>" required />
         </div>
+          <div class="input-group">
+            <input type="radio" name="gender" value="male" checked> Male
+            <input type="radio" name="gender" value="female"> Female
+            <input type="radio" name="gender" value="other"> Other
+          </div>
         <div class="input-group">
             <label for="password">Password</label>
             <input type="password" name="password" id="password" class="form-control" required />
@@ -27,8 +36,5 @@
             <a href="/login" class="btn btn-link">Cancel</a>
         </div>
     </form>
-</div>
-</div>
-<!--%- include('partials/footer') %-->
-</body>
-</html>
+
+<%- include('partials/footer') %>
