@@ -316,3 +316,5 @@ div.tab button.active {
 /* Style the tab content */
 .tabcontent {
 }
+
+.vertical-align-top{vertical-align:top;}
