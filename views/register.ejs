@@ -1,40 +1,69 @@
 ﻿<%- include('partials/header') %>
-<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
-<div class="form">
-    <h2>Registration</h2>
-    <% if(locals.error) { %>
-        <div class="alert alert-danger"><%= error %></div>
-    <% } %>
-    <form method="post">
-        <div class="input-group">
-            <label for="firstName">First name</label>
-            <input type="text" placeholder="FirstName" name="firstName" id="firstName" class="form-control" value="<%= locals.firstName || '' %>" required />
+<section id="Signup" class="login-section tabcontent">
+    <div class="row margin-left50">
+        <img src="assets/images/register-cool.png" class="border-radius-50">
+
+        <div class="col-md-6 col-sm-12 col-xs-12 login-me-div">
+
+            <div class=" login-section-space-padding section-title login-section-text">
+
+                <form method="post">
+                    <% if(locals.error) { %>
+                    <div class="alert alert-danger"><%= error %></div>
+                    <% } %>
+                    <div class="">
+                        <div class="form-group form-inputt">
+                            <span class="fa fa-user color-green position-absolute fontsize-48"></span><input type="text" id="firstName" name="firstName" class="fa fa-user form-control margin-left-50" placeholder="FirstName">
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <div class="form-group form-inputt">
+                            <span class="fa fa-lock color-red position-absolute fontsize-48"></span><input type="text" id="lastName" name="lastName" class="fa fa-user form-control margin-left-50" placeholder="LastName">
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="form-group form-inputt">
+                            <span class="fa fa-user color-green position-absolute fontsize-48"></span><input type="email" id="email" name="email" class="fa fa-user form-control margin-left-50" placeholder="Email">
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <div class="form-group form-inputt">
+                            <span class="fa fa-lock color-red position-absolute fontsize-48"></span><input type="text" id="username" name="username" class="fa fa-user-circle form-control margin-left-50" placeholder="Username">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <input type="radio" name="gender" value="male" checked> Male
+                        <input type="radio" name="gender" value="female"> Female
+                    </div>
+
+                    <div class="">
+                        <div class="form-group form-inputt">
+                            <span class="fa fa-lock color-red position-absolute fontsize-48"></span><input type="password"  name="password" id="password" class="fa fa-user form-control margin-left-50" placeholder="Password" required>
+                        </div>
+                    </div>
+
+                    <div class="text-center ">
+                        <button type="submit" class="login-button"> <img src="assets/images/sign-up-button-png-18.png"></button>
+                    </div>
+                </form>
+
+                <span>Already Have an Account?</span><a onclick="openCity(event, 'Login')"  href="/login"  class="login-button-tex color-blue tablinks"><img src="assets/images/login-button-blue.png"></a><br>
+                <br>
+            </div>
         </div>
-        <div class="input-group">
-            <label for="lastName">Last name</label>
-            <input type="text" placeholder="LastName" name="lastName" id="lastName" class="form-control" value="<%= locals.lastName || '' %>" required />
-        </div>
-        <div class="input-group">
-            <label for="password">Email</label>
-            <input type="email" placeholder="example@domain.com" name="email" id="email" class="form-control" required />
-        </div>
-        <div class="input-group">
-            <label for="username">Username</label>
-            <input type="text" placeholder="Username" name="username" id="username" class="form-control" value="<%= locals.username || '' %>" required />
-        </div>
-          <div class="input-group">
-            <input type="radio" name="gender" value="male" checked> Male
-            <input type="radio" name="gender" value="female"> Female
-            <input type="radio" name="gender" value="other"> Other
-          </div>
-        <div class="input-group">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form-control" required />
-        </div>
-        <div class="input-group">
-            <button type="submit" class="btn btn-primary">Register</button>
-            <a href="/login" class="btn btn-link">Cancel</a>
-        </div>
-    </form>
+    </div>
+</section>
+
+
+
+<!-- All Javascript Plugins  -->
+<script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/js/plugin.js"></script>
+<!-- Main Javascript File  -->
+<script type="text/javascript" src="/assets/js/scripts.js"></script>
+<script type="text/javascript" src="/assets/js/typed.js"></script>
+
 
 <%- include('partials/footer') %>

@@ -1,52 +1,50 @@
 <%- include('partials/header') %>
-<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
-<div class="form">
-    <h2>Login</h2>
-    <% if(locals.error) { %>
+<section id="Login" class="login-section tabcontent">
+    <div class="row margin-left50">
+
+        <% if(locals.error) { %>
         <div class="alert alert-danger"><%= error %></div>
-    <% } %>
-    <% if(locals.success) { %>
+        <% } %>
+        <% if(locals.success) { %>
         <div class="alert alert-success"><%= success %></div>
-    <% } %>
-    <div class="first-row">
-        <a href="#"><img src="https://s13.postimg.org/r7a1xqv1j/1480623034_lock.png" alt="login" class="icon-login"></a>
-        <h2 class="first-login">LOGIN</h2>
-      </div>
-    <form method="post">
-        <div class="input-group">
-          <span class="input-group-addon">
-              <span class="fa fa-user fa-2x"></span>
-            </span>
-            <input type="text" class="form-control" name="username" placeholder="Username" id="username" value="<%= locals.username || '' %>" class="form-control" />
-        </div>
-         <div class="input-group">
-           <span class="input-group-addon">
-             <span class="fa fa-lock fa-2x"></span>
-           </span>
-            <input type="password" name="password" id="password" placeholder="Password" class="form-control" />
-        </div>
-        <div class="row">
-          <div class="remember-me col-sm-6 col-xs-6">
-            <label class="switch">
-              <input type="checkbox">
-              <div class="slider round"></div>
-            </label>
-            <p>Remember Me</p>
-          </div>
-          <div class="forget col-sm-6 col-xs-6">
-            <a href="#">Forgot your password ?</a>
-          </div>
-        </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-lg login-btn">Login</button>
+        <% } %>
+        <img src="assets/images/login.png">
+        <div class="col-md-6 col-sm-12 col-xs-12 login-me-div">
 
+            <div class=" login-section-space-padding section-title login-section-text">
+
+                <form method="post">
+                    <br>
+                    <div class="">
+                        <div class="form-group form-inputt">
+                            <span class="fa fa-user color-green position-absolute fontsize-48"></span><input type="text" id="username" name="username" class="fa fa-user form-control margin-left-50" placeholder="Username">
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <div class="form-group form-inputt">
+                            <span class="fa fa-lock color-red position-absolute fontsize-48"></span><input type="password" id="password" name="password" class="fa fa-user form-control margin-left-50" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="text-center ">
+                        <button type="submit" class="login-button"> <img src="assets/images/login-button-blue.png"></button>
+                    </div>
+                </form>
+
+                <span>Not Registered?</span><a onclick="openCity(event, 'Signup')" href="/register"  class="login-button-tex color-blue tablinks"><img src="assets/images/register-here.png"></a><br>
+                <br>
+            </div>
         </div>
+    </div>
+</section>
 
-        <div class="social-login col-sm-6 col-sm-offset-3">
 
-            <p class="sign-up">Not A Member ? <a href="/register">SIGN UP Now!</a></p>
-        </div>
 
-    </form>
+<!-- All Javascript Plugins  -->
+<script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/js/plugin.js"></script>
+<!-- Main Javascript File  -->
+<script type="text/javascript" src="/assets/js/scripts.js"></script>
+<script type="text/javascript" src="/assets/js/typed.js"></script>
 
 <!--%- include('partials/footer') %>
